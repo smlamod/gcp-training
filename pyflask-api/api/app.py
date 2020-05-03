@@ -4,11 +4,13 @@ from flask_sqlalchemy import SQLAlchemy
 from models.employee import Employee
 from sqlalchemy import or_
 import datetime
+from flask_cors import CORS
 
 UNAME = environ.get('MYSQL_USERNAME')
 PASWD = environ.get('MYSQL_PASSWORD')
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://{UNAME}:{PASWD}@localhost/gcptraining'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
@@ -24,5 +26,7 @@ def get_employees():
 
 @app.route('/employee/query/<string:query>', methods=(['GET']))
 def get_employee_by_query(query):
-    results = Employee.query.filter(or_(Employee.KnownAsName.contains(query), Employee.UserId == query)).all()
+    results = Employee.query.filter(or_(Employee.KnownAsName.contains(query), 
+                                        Employee.UserId.startswith(query), 
+                                        Employee.EmployeeNumber == query)).all()
     return jsonify(results),200

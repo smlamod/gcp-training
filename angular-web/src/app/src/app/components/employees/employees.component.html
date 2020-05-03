@@ -1,0 +1,28 @@
+<h1>Search Employees</h1>
+
+<input type="text" class="form-control" name=query placeholder="type in Employee Number, Name" (input)="onSearchChange($event.target.value)"/>
+<br/>
+<p>This result set are auto generated dummy accounts comming from a MySQL endpoint. 
+Table is just a mapping of objects to table rows with <code>ngFor</code>
+</p>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Employee Number</th>
+    <th scope="col">UserId</th>
+    <th scope="col">Known as Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Department Name</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let emp of employees">
+    <td>{{ emp.EmployeeNumber }}</td>
+    <td>{{ emp.UserId }}</td>
+    <td>{{ emp.KnownAsName }}</td>
+    <td>{{ emp.Email }}</td>
+    <td>{{ emp.DepartmentName }}</td>
+  </tr>
+  </tbody>
+</table>

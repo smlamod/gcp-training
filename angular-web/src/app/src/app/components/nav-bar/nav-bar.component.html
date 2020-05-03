@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-steel mb-4">
+    <div class="container">
+      <a class="navbar-brand" href="#">Angular Flask</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav mr-auto">
+            <a class="nav-link nav-item active" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link nav-item" [routerLink]="['/employees']">Employees</a>
+            <a class="nav-link nav-item" [routerLink]="['/about']">About</a>
+        </div>  
+        <div class="navbar-nav">
+          <a class="nav-link" href="/Login">Login</a>
+          <a class="nav-link" href="/Register">Register</a>
+        </div>
+      </div>
+    </div>  
+</nav>
