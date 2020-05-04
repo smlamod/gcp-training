@@ -19,7 +19,7 @@ export interface employee {
   CreatedDate : Date
 }
 
-const BASEURL = 'http://localhost:5555/';
+const BASEURL = 'https://training-project-042020a.uc.r.appspot.com/';
 
 @Component({
   selector: 'app-employees',
