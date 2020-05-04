@@ -7,15 +7,14 @@
         {
             "name": "Python: Flask",
             "type": "python",
-            "request": "launch",
-            
+            "request": "launch",            
             "program": "${workspaceRoot}/main.py",
             "env": {
-                "FLASK_APP": "runserver.py",
+                "FLASK_APP": "main.py",
                 "FLASK_ENV": "development",
                 "FLASK_DEBUG": "0",
                 "DB_USER": "defaultapp",
-                "DB_PASS" : "gcp-practice-2020",
+                "DB_PASS" : "INSERT PASSWORD HERE",
                 "DB_NAME" : "GCPTRAINING",
                 "CLOUD_SQL_CONNECTION_NAME" : "training-project-042020a:us-central1:angular-flask-cloudsql"
             },
