@@ -6,6 +6,8 @@ db = SQLAlchemy()
 
 @dataclass
 class Employee(db.Model):
+    __tablename__ = 'Employee'
+    
     Id : int
     EmployeeNumber : str
     UserId : str
