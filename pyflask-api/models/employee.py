@@ -7,7 +7,7 @@ db = SQLAlchemy()
 @dataclass
 class Employee(db.Model):
     __tablename__ = 'Employee'
-    
+
     Id : int
     EmployeeNumber : str
     UserId : str
@@ -18,10 +18,10 @@ class Employee(db.Model):
     KnownAsName : str 	
     Phone : str 
     Email : str 
-    DateOfBirth = datetime.datetime
-    IsActive = bool
+    DateOfBirth : datetime.datetime
+    IsActive : bool
     TimeZone : str
-    CreatedDate = datetime.datetime    
+    CreatedDate : datetime.datetime    
 
     Id = db.Column(db.Integer, primary_key=True)
     EmployeeNumber = db.Column(db.String(256), unique=True)
